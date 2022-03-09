@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция, которая выполняет математеческую операцию (+, -, *, /)
+   * 
+   * @param {number} arg1 - Первое число
+   * @param {number} arg2 - Второе число
+   * @param (string) operation - Операция (из списка "-", "+", "*", "/")
+   * 
+   * @return {number} Результат
+   */
+  function mathOperation(arg1, arg2, operation) {
+    let result;  
+    if (operation == "+") {
+        result = summa(arg1, arg2);
+    } else if (operation == "-") {
+        result = raznost(arg1, arg2);
+    } else if (operation == "/") {
+        result = delenie(arg1, arg2);
+    } else if (operation == "*") {
+        result = umnozhenie(arg1, arg2);
+    } else {
+      result = NaN;
+    }
+    return result;
+  }
+
+   /**
+   * Эта функция складывает два числа и возращает полученное значение
+   * 
+   * @param {number} a - Первое значение (слагаемое)
+   * @param {number} b - Второе значение (слагаемое)
+   * 
+   * @return {number} Сумма
+   */
+   function summa(a, b) {
+    let c;
+    c = a + b;
+    return c;
+  } 
+
+   /**
+   * Эта функция умножает два числа и возращает полученное значение
+   * 
+   * @param {number} a - Первое значение (множитель)
+   * @param {number} b - Второе значение (множитель)
+   * 
+   * @return {number} Произведение
+   */
+  function umnozhenie(a, b) {
+    let c;
+    c = a * b;
+    return c;
+  }
+
+   /**
+   * Эта функция делит одно число на другое и возращает полученное значение
+   * 
+   * @param {number} a - Первое значение (числитель)
+   * @param {number} b - Второе значение (знаменатель)
+   * 
+   * @return {number} Результат деления
+   */
+  function delenie(a, b) {
+    let c;
+    c = a / b;
+    return c;
+  }
+
+   /**
+   * Эта функция вычитает из большего числа менбьшее и возращает полученное значение
+   * 
+   * @param {number} a - Первое значение
+   * @param {number} b - Второе значение
+   * 
+   * @return {number} Разность
+   */
+  function raznost(a, b) {
+    let c;
+
+    //c = Math.abs(a - b); Можно было и так
+
+    if (a > b) {
+      c = a - b;
+    } else {
+      c = b - a;
+    }
+    return c;
+  }
+
+
+
+  
+  let x = 8;
+  let y = 7;
+
+  let resultat = mathOperation(x, y, "*");
+  console.log(resultat);
+
+
+  console.log(mathOperation(5, 3, "+")); // 8
+  console.log(mathOperation(5, 3, ":)")); // NaN
+
+</script>
+</body>
+</html>
